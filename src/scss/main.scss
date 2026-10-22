@@ -6,12 +6,12 @@ $primary: #176b87;
 $secondary: #ffd560;
 $body-bg: #f8fafc;
 $body-color: #263238;
-$egypt-sand: #f4e4c1;
+$egypt-sand: #f4e8cd;
 $egypt-gold: #c58a28;
 $egypt-brown: #68451f;
 $istanbul-blue: #176b87;
 $istanbul-turquoise: #35a9a0;
-$istanbul-white: #f2fbfc;
+$istanbul-white: #e3edf9;
 
 body {
   font-family: "Almarai", sans-serif;
@@ -359,7 +359,7 @@ body {
 .tour-page--egypt {
   --tour-accent: #{$egypt-gold};
   --tour-ink: #{$egypt-brown};
-  --tour-surface: #ead4a6;
+  --tour-surface: #{$egypt-sand};
   --tour-gallery-surface: #{$egypt-sand};
 
   .tour-intro {
@@ -406,7 +406,7 @@ body {
   font-size: 1.1rem;
 }
 
-.istanbul-attractions {
+.tour-attractions {
   background-color: #f0f5f7;
 }
 
