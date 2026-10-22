@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="أنشئ حسابك في سفرني وابدأ اكتشاف وجهات سياحية جديدة."
+    />
+    <link rel="icon" type="image/png" href="assets/images/icon.png" />
+    <title>إنشاء حساب | سفرني</title>
+  </head>
+  <body>
+    <main class="auth-page">
+      <section class="auth-card" aria-labelledby="register-title">
+        <img
+          class="auth-icon"
+          src="assets/images/icon.png"
+          alt="أيقونة سفرني"
+        />
+        <h1 id="register-title">ابدأ رحلتك معنا!</h1>
+        <p class="auth-description">
+          انضم إلى سفرني واكتشف وجهات جديدة لتصنع ذكريات لا تُنسى.
+        </p>
+
+        <form id="register-form">
+          <div class="mb-3">
+            <label class="form-label" for="register-name">الاسم الكامل</label>
+            <input
+              class="form-control"
+              id="register-name"
+              name="name"
+              type="text"
+              autocomplete="name"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="register-birthdate"
+              >تاريخ الميلاد</label
+            >
+            <input
+              class="form-control"
+              id="register-birthdate"
+              name="birthdate"
+              type="date"
+              autocomplete="bday"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="register-email"
+              >البريد الإلكتروني</label
+            >
+            <input
+              class="form-control"
+              id="register-email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="register-password"
+              >كلمة المرور</label
+            >
+            <input
+              class="form-control"
+              id="register-password"
+              name="password"
+              type="password"
+              autocomplete="new-password"
+              required
+            />
+          </div>
+          <div class="mb-4">
+            <label class="form-label" for="register-password-confirm"
+              >تأكيد كلمة المرور</label
+            >
+            <input
+              class="form-control"
+              id="register-password-confirm"
+              name="password-confirm"
+              type="password"
+              autocomplete="new-password"
+              required
+            />
+          </div>
+          <button class="btn btn-primary btn-lg w-100" type="submit">
+            إنشاء حساب جديد
+          </button>
+        </form>
+
+        <p class="auth-switch mb-0">
+          لديك حساب بالفعل؟
+          <a href="login.html">تسجيل الدخول</a>
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,553 @@
+@use "sass:color";
+
+@import url("https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Cairo:wght@200..1000&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap");
+
+$primary: #176b87;
+$secondary: #ffd560;
+$body-bg: #f8fafc;
+$body-color: #263238;
+$egypt-sand: #f4e4c1;
+$egypt-gold: #c58a28;
+$egypt-brown: #68451f;
+$istanbul-blue: #176b87;
+$istanbul-turquoise: #35a9a0;
+$istanbul-white: #f2fbfc;
+
+body {
+  font-family: "Almarai", sans-serif;
+  font-weight: 400;
+  direction: rtl;
+  line-height: 1.7;
+  background-color: $body-bg;
+  color: $body-color;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: $primary;
+  border-color: $primary;
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    background-color: color.adjust($primary, $lightness: -7%);
+    border-color: color.adjust($primary, $lightness: -7%);
+  }
+}
+
+#navbar-icon {
+  width: 45px;
+  height: 45px;
+  margin-inline-end: 0.5rem;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+.btn-outline-primary {
+  color: $primary;
+  border-color: $primary;
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    background-color: $primary;
+    border-color: $primary;
+  }
+}
+
+.navbar {
+  min-height: 76px;
+}
+
+.brand-name,
+.footer-brand {
+  color: $primary;
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.brand-name:hover,
+.footer-brand:hover {
+  color: $primary;
+}
+
+.nav-link {
+  position: relative;
+  color: $body-color;
+  font-weight: 600;
+  padding-inline: 1rem !important;
+
+  &::after {
+    position: absolute;
+    right: 1rem;
+    bottom: 0.25rem;
+    left: 1rem;
+    height: 2px;
+    background-color: $primary;
+    content: "";
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.25s ease;
+  }
+
+  &:hover,
+  &:focus-visible,
+  &.active {
+    color: $primary;
+  }
+
+  &:hover::after,
+  &:focus-visible::after,
+  &.active::after {
+    transform: scaleX(1);
+  }
+}
+
+.navbar .navbar-nav .nav-link.active {
+  color: $primary;
+}
+
+.section-space {
+  padding-block: 5.5rem;
+}
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 600px;
+  color: #fff;
+  background:
+    linear-gradient(90deg, rgba(12, 28, 43, 0.82), rgba(12, 28, 43, 0.28)),
+    url("../assets/images/hero.jpg") center 53% / cover no-repeat;
+}
+
+.hero-content {
+  padding-block: 6rem;
+  margin-inline-start: 10px;
+}
+
+.hero-eyebrow,
+.section-kicker {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  color: $secondary;
+  font-size: 23px;
+  font-weight: 800;
+}
+
+.hero-section h1 {
+  max-width: 700px;
+  margin-bottom: 1rem;
+  font-size: 55px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.hero-section p {
+  max-width: 580px;
+  margin-bottom: 1.75rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 20px;
+}
+
+.section-heading {
+  max-width: 680px;
+  margin-inline: auto;
+
+  h2 {
+    margin-bottom: 0.75rem;
+    color: $primary;
+    font-size: clamp(2rem, 4vw, 2.7rem);
+    font-weight: 800;
+  }
+
+  p {
+    margin-bottom: 0;
+    color: #68767d;
+    font-size: 16px;
+  }
+}
+
+.service-card {
+  padding: 2rem;
+  border: 1px solid #e8edf0;
+  border-radius: 1rem;
+  background-color: #fff;
+  box-shadow: 0 8px 24px rgba(25, 57, 70, 0.05);
+
+  h3 {
+    margin: 1rem 0 0.5rem;
+    color: $body-color;
+    font-size: 1.35rem;
+    font-weight: 700;
+  }
+
+  p {
+    margin-top: 15px;
+    margin-bottom: 0;
+    color: #68767d;
+  }
+}
+
+.service-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 1rem;
+  background-color: color.change($secondary, $alpha: 0.2);
+  font-size: 1.75rem;
+}
+
+.tours-section {
+  background-color: #f0f5f7;
+}
+
+.tour-card {
+  overflow: hidden;
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: 0 12px 30px rgba(25, 57, 70, 0.08);
+
+  .card-body {
+    padding: 1.5rem;
+  }
+
+  .card-title {
+    margin-bottom: 0.75rem;
+    font-size: 1.35rem;
+    font-weight: 700;
+  }
+
+  .card-text {
+    color: #68767d;
+  }
+}
+
+.tour-image {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+}
+
+.tour-location {
+  align-self: flex-start;
+  margin-bottom: 0.5rem;
+  color: $primary;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.tour-price {
+  color: #68767d;
+
+  strong {
+    color: $primary;
+    font-size: 1.1rem;
+  }
+}
+
+.contact-details {
+  margin-top: 1.75rem;
+
+  p {
+    margin-bottom: 0.8rem;
+  }
+
+  a {
+    color: $primary;
+    text-decoration: none;
+  }
+}
+
+.contact-map {
+  overflow: hidden;
+  min-height: 300px;
+  border: 1px solid #dce6ea;
+  border-radius: 1rem;
+
+  iframe {
+    display: block;
+    width: 100%;
+    min-height: 300px;
+    border: 0;
+  }
+}
+
+.auth-page {
+  display: grid;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  place-items: center;
+  background:
+    linear-gradient(rgba(248, 250, 252, 0.92), rgba(248, 250, 252, 0.92)),
+    url("../assets/images/hero.jpg") center / cover no-repeat;
+}
+
+.auth-card {
+  width: min(100%, 480px);
+  padding: clamp(1.5rem, 5vw, 2.5rem);
+  border: 1px solid #e8edf0;
+  border-radius: 1rem;
+  background-color: #fff;
+  box-shadow: 0 12px 30px rgba(25, 57, 70, 0.08);
+
+  h1 {
+    margin-bottom: 0.5rem;
+    color: $primary;
+    font-size: clamp(1.6rem, 5vw, 2rem);
+    font-weight: 800;
+    text-align: center;
+  }
+
+  .form-label {
+    font-weight: 700;
+  }
+
+  .form-control {
+    min-height: 48px;
+    border-color: #dce6ea;
+    border-radius: 0.65rem;
+    text-align: right;
+
+    &:focus {
+      border-color: $primary;
+      box-shadow: 0 0 0 0.2rem color.change($primary, $alpha: 0.18);
+    }
+  }
+
+  .btn {
+    border-radius: 0.65rem;
+    font-weight: 700;
+  }
+}
+
+.auth-icon {
+  display: block;
+  width: 68px;
+  height: 68px;
+  margin: 0 auto 1rem;
+  object-fit: contain;
+}
+
+.auth-description {
+  margin-bottom: 1.75rem;
+  color: #68767d;
+  text-align: center;
+}
+
+.auth-form-options {
+  text-align: start;
+}
+
+.auth-switch {
+  margin-top: 1.5rem;
+  color: #68767d;
+  text-align: center;
+
+  a,
+  a:hover,
+  a:focus-visible {
+    color: $primary;
+    font-weight: 700;
+  }
+}
+
+.tour-page--egypt {
+  --tour-accent: #{$egypt-gold};
+  --tour-ink: #{$egypt-brown};
+  --tour-surface: #ead4a6;
+  --tour-gallery-surface: #{$egypt-sand};
+
+  .tour-intro {
+    padding-bottom: 2rem;
+  }
+
+  .tour-gallery {
+    padding-top: 2rem;
+    background-color: var(--tour-gallery-surface);
+  }
+}
+
+.tour-page--istanbul {
+  --tour-accent: #{$istanbul-turquoise};
+  --tour-ink: #{$istanbul-blue};
+  --tour-surface: #{$istanbul-white};
+}
+
+.tour-intro {
+  background-color: var(--tour-surface);
+
+  h1,
+  .tour-kicker {
+    color: var(--tour-ink);
+  }
+
+  h1 {
+    margin-bottom: 1rem;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+  }
+}
+
+.tour-kicker {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  color: var(--tour-accent);
+  font-weight: 800;
+}
+
+.tour-lead {
+  max-width: 900px;
+  color: #526168;
+  font-size: 1.1rem;
+}
+
+.istanbul-attractions {
+  background-color: #f0f5f7;
+}
+
+.attraction-card {
+  padding: 1.75rem;
+  border-inline-start: 4px solid var(--tour-accent);
+  border-radius: 1rem;
+  background-color: #fff;
+  box-shadow: 0 8px 24px rgba(25, 57, 70, 0.05);
+
+  h2 {
+    margin-bottom: 0.75rem;
+    color: var(--tour-ink);
+    font-size: 1.35rem;
+    font-weight: 800;
+  }
+
+  p {
+    margin-bottom: 0;
+    color: #68767d;
+  }
+}
+
+.tour-gallery {
+  background-color: var(--tour-surface);
+
+  .section-heading h2 {
+    color: var(--tour-ink);
+  }
+}
+
+.tour-gallery-image {
+  display: block;
+  width: 100%;
+  height: 240px;
+  border-radius: 1rem;
+  object-fit: cover;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(25, 57, 70, 0.18);
+  }
+}
+
+.site-footer {
+  padding-block: 1.5rem;
+  background-color: #123f50;
+  color: rgba(255, 255, 255, 0.8);
+
+  .footer-brand {
+    color: #fff;
+    font-size: 1.5rem;
+    text-decoration: none;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    padding-block: 1rem;
+  }
+
+  .navbar-nav .nav-link {
+    width: fit-content;
+  }
+
+  .navbar-collapse .btn {
+    text-align: center;
+  }
+
+  .hero-eyebrow,
+  .section-kicker {
+    font-size: 20px;
+  }
+
+  .hero-section p {
+    font-size: 18px;
+  }
+
+  .hero-section h1 {
+    font-size: 40px;
+  }
+    .service-card {
+    p{
+      font-size: 15px;
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .section-space {
+    padding-block: 4rem;
+  }
+
+  #navbar-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .hero-section {
+    min-height: 520px;
+    background-position: 58% center;
+  }
+
+  .hero-section p {
+    max-width: 80%;
+    font-size: 14px;
+  }
+
+  .hero-section h1 {
+    font-size: 30px;
+  }
+
+  .hero-eyebrow,
+  .section-kicker {
+    font-size: 15px;
+  }
+
+  .hero-content {
+    padding-block: 4rem;
+  }
+
+  .service-card {
+    padding: 1.5rem;
+  }
+
+  .tour-image {
+    height: 220px;
+  }
+
+  .tour-gallery-image {
+    height: 220px;
+  }
+  .section-heading {
+    p {
+      font-size: 11px;
+    }
+  }
+  .service-card {
+    p{
+      font-size: 11px;
+    }
+  }
+}
