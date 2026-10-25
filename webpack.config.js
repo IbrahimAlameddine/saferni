@@ -1,4 +1,3 @@
-
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
@@ -18,42 +17,41 @@ module.exports = {
   output: {
     filename: "assets/js/bundle.js",
     path: path.resolve(__dirname, "dist"),
+    publicPath: "/saferni/",
     clean: true,
   },
 
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        type: "javascript/auto",
+      },
+      {
+        test: /\.scss$/,
+        use: ["style-loader", "css-loader", "sass-loader"],
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.(png|jpe?g)$/i,
+        type: "asset/resource",
+        generator: {
+          filename: (pathData) => {
+            const imagesDirectory = path.resolve(
+              __dirname,
+              "src/assets/images",
+            );
+            const imagePath = path.relative(imagesDirectory, pathData.filename);
 
-module: {
-  rules: [
-    {
-      test: /\.js$/,
-      type: "javascript/auto",
-    },
-    {
-      test: /\.scss$/,
-      use: ["style-loader", "css-loader", "sass-loader"],
-    },
-    {
-      test: /\.css$/,
-      use: ["style-loader", "css-loader"],
-    },
-    {
-      test: /\.(png|jpe?g)$/i,
-      type: "asset/resource",
-      generator: {
-        filename: (pathData) => {
-          const imagesDirectory = path.resolve(
-            __dirname,
-            "src/assets/images"
-          );
-          const imagePath = path.relative(imagesDirectory, pathData.filename);
-
-          return `assets/images/${imagePath.replace(/\\/g, "/")}`;
+            return `assets/images/${imagePath.replace(/\\/g, "/")}`;
+          },
         },
       },
-    },
-  ],
-},
-
+    ],
+  },
 
   plugins: pages.map(
     ({ name, title }) =>
@@ -61,7 +59,7 @@ module: {
         template: `./src/pages/${name}.html`,
         filename: `${name}.html`,
         title,
-      })
+      }),
   ),
 
   devServer: {
