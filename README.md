@@ -18,7 +18,6 @@ Safarni is a responsive tourism website that helps users explore tourist destina
 - Sass (SCSS)
 - Bootstrap
 - JavaScript
-- jQuery
 - Webpack
 - Git and GitHub
 

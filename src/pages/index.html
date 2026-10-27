@@ -7,13 +7,6 @@
       name="description"
       content="اكتشف أجمل الوجهات والرحلات السياحية مع سفرني."
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
-      integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
     <title>سفرني | اكتشف العالم</title>
   </head>
 
@@ -27,7 +20,7 @@
           href="index.html"
           aria-label="سفرني - الصفحة الرئيسية"
         >
-          <img src="assets/images/icon.png" alt="icon" id="navbar-icon" />
+          <img src="assets/images/icon.png" alt="icon" class="brand-icon" />
           سفرني
         </a>
 
@@ -107,9 +100,7 @@
             </div>
             <div class="col-12 col-md-6">
               <article class="service-card h-100">
-                <span class="service-icon" aria-hidden="true"
-                  ><i class="fa-solid fa-car"></i
-                ></span>
+                <span class="service-icon" aria-hidden="true">🚗</span>
                 <h3>حجز سيارة</h3>
                 <p>
                   <b>
@@ -168,6 +159,8 @@
                   src="assets/images/2.jpg"
                   class="card-img-top tour-image"
                   alt="أهرامات الجيزة في مصر وقت الغروب"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div class="card-body d-flex flex-column">
                   <span class="tour-location">مصر</span>
@@ -194,6 +187,8 @@
                   src="assets/images/1.jpg"
                   class="card-img-top tour-image"
                   alt="مشهد ليلي لجسر البوسفور في إسطنبول"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div class="card-body d-flex flex-column">
                   <span class="tour-location">تركيا</span>
@@ -238,7 +233,7 @@
                 </p>
                 <p>
                   <strong>البريد الإلكتروني:</strong>
-                  <a href="mailto:hello@safarni.example">saferni@gmail.com</a>
+                  <a href="mailto:saferni@gmail.com">saferni@gmail.com</a>
                 </p>
                 <p><strong>العنوان:</strong> شارع الحمرا، بيروت، لبنان</p>
               </div>
@@ -265,8 +260,8 @@
         class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2"
       >
         <a class="footer-brand" href="index.html">
-          <img src="assets/images/icon-white.png" alt="icon" id="navbar-icon" />
-          سفرتي
+          <img src="assets/images/icon-white.png" alt="icon" class="brand-icon" />
+          سفرني
         </a>
         <p class="mb-0">&copy; 2026 سفرني. جميع الحقوق محفوظة.</p>
       </div>
